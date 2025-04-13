@@ -1,5 +1,6 @@
 package com.sky.constant;
 
+
 /**
  * 公共字段自动填充相关常量
  */
