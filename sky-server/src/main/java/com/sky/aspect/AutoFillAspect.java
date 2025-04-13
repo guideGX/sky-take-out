@@ -1,7 +1,9 @@
 package com.sky.aspect;
 
 import com.sky.annotation.AutoFill;
+
 import com.sky.constant.AutoFillConstant;
+
 import com.sky.context.BaseContext;
 import com.sky.enumeration.OperationType;
 import lombok.extern.slf4j.Slf4j;
@@ -48,6 +50,9 @@ public class AutoFillAspect {
         AutoFill autoFill = signature.getMethod().getAnnotation(AutoFill.class);
         OperationType operationType = autoFill.value();
 
+        MethodSignature signature = (MethodSignature) joinPoint.getSignature();
+        AutoFill autoFill = signature.getMethod().getAnnotation(AutoFill.class);
+        OperationType operationType = autoFill.value();
         //获取到当前被拦截方法的参数--实体对象
         Object[] args = joinPoint.getArgs();
         if (args != null && args.length > 0) {
