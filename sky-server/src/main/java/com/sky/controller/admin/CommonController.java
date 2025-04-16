@@ -32,19 +32,19 @@ public class CommonController {
     @PostMapping("/upload")
     @ApiOperation("文件上传")
     public Result<String> upload(MultipartFile file){
-        log.info("文件上传：{}",file);
-        try {
-            //原始文件名
-            String originalFilename = file.getOriginalFilename();
-            //截取文件后缀名
-            String suffix = originalFilename.substring(originalFilename.lastIndexOf("."));
-            //构造新文件名
-            String objectName = UUID.randomUUID().toString() + suffix;
-            String filePath = aliOssUtil.upload(file.getBytes(), file.getOriginalFilename());
-            return Result.success(filePath);
-        } catch (IOException e) {
-            log.error("文件上传失败：{}",e);
-        }
-        return Result.error("上传失败");
+//        log.info("文件上传：{}",file);
+//        try {
+//            //原始文件名
+//            String originalFilename = file.getOriginalFilename();
+//            //截取文件后缀名
+//            String suffix = originalFilename.substring(originalFilename.lastIndexOf("."));
+//            //构造新文件名
+//            String objectName = UUID.randomUUID().toString() + suffix;
+//            String filePath = aliOssUtil.upload(file.getBytes(), file.getOriginalFilename());
+//            return Result.success(filePath);
+//        } catch (IOException e) {
+//            log.error("文件上传失败：{}",e);
+//        }
+       return Result.success();
     }
 }

@@ -1,5 +1,13 @@
 package com.sky.service;
 
-public interface DishService {
+import com.sky.dto.DishDTO;
+import org.springframework.stereotype.Service;
 
+@Service
+public interface DishService {
+    /**
+     * 新增菜品和对应口味
+     * @param dishDTO
+     */
+    void saveWithFlavor(DishDTO dishDTO);
 }
