@@ -8,9 +8,10 @@
             (#{df.dishId}, #{df.name}, #{df.value})
         </foreach>
     </insert>
+    <!--collection 指定一个集合  -->
     <delete id="deletByIds" >
-        delete from dish_flavor where dish_flavor.dish_id in
-        <foreach collection="dihsIds" open="(" close=")" separator="," item="dishId">
+        delete from dish_flavor where dish_id in
+        <foreach collection="dishIds" open="(" close=")" separator="," item="dishId">
             #{dishId}
         </foreach>
     </delete>
