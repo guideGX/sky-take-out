@@ -32,6 +32,5 @@ public class OrderController {
         log.info("用户下单，参数为：{}", ordersSubmitDTO);
         OrderSubmitVO orderSubmitVO = orderService.submitOrder(ordersSubmitDTO);
         return Result.success(orderSubmitVO);
-
     }
 }
